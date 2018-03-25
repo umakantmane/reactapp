@@ -1,14 +1,10 @@
-var PORT =  process.env.PORT || 8083;
+var PORT =  process.env.PORT || 8080;
 var config = {
+   
    entry: './main.js',
    output: {
       path:'/',
       filename: 'index.js',
-   },
-   devServer: {
-      inline: true,
-      historyApiFallback:true,
-      port: PORT
    },
    module: {
       loaders: [
