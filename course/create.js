@@ -43,7 +43,7 @@ class CreateCourse extends Component{
              event.preventDefault();
             if(this.handleFormValidation()){
 
-                fetch('http://localhost:8000/course', {
+                fetch('https://reactdjango.herokuapp.com/course', {
                     method: 'POST',
                     headers: {
                         Accept: 'application/json',

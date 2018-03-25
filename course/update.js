@@ -28,7 +28,7 @@ class UpdateCouser extends Component {
         
         if(this.validateForm()) {
             
-            fetch('http://localhost:8000/course/'+this.props.match.params.id+'/',{
+            fetch('https://reactdjango.herokuapp.com/course/'+this.props.match.params.id+'/',{
             method:'PUT',
             headers:{
                 Accept:'application/json',

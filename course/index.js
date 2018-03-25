@@ -16,7 +16,7 @@ class Index extends Component {
     clickFunction(id){
         
         if(confirm("Are you sure do delete this record!")) {   
-            fetch('http://localhost:8000/course/' + id, {method: "DELETE"})
+            fetch('https://reactdjango.herokuapp.com/course/' + id, {method: "DELETE"})
                     .then(res=>{
                        this.componentDidMount();
             })

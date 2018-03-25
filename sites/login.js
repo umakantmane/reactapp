@@ -47,7 +47,7 @@ class Login extends Component{
 		 event.preventDefault();
             if(this.handleFormValidation()){
 
-            	fetch('http://localhost:8000/signin', {
+            	fetch('https://reactdjango.herokuapp.com/signin', {
                     method: 'POST',
                     headers: {
                         Accept: 'application/json',

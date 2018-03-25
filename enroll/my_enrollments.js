@@ -16,7 +16,7 @@ class MyEnrollments extends Component {
     clickFunction(id){
         
         if(confirm("Are you sure do delete this record!")) {   
-            fetch('http://localhost:8000/student_enroll_delete/' + id, {method: "DELETE"})
+            fetch('https://reactdjango.herokuapp.com/student_enroll_delete/' + id, {method: "DELETE"})
                     .then(res=>{
                        this.componentDidMount();
             })
@@ -26,7 +26,7 @@ class MyEnrollments extends Component {
         }
     };
     componentDidMount(){
-        fetch('http://localhost:8000/studentenroll/'+localStorage.getItem('user_id'))
+        fetch('https://reactdjango.herokuapp.com/studentenroll/'+localStorage.getItem('user_id'))
             .then(res => res.json())
             .then(res => {
             console.log(res.data);                  

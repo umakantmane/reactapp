@@ -54,7 +54,7 @@ class Register extends Component{
 		 event.preventDefault();
             if(this.handleFormValidation()){
 
-            	fetch('http://localhost:8000/signup', {
+            	fetch('https://reactdjango.herokuapp.com/signup', {
                     method: 'POST',
                     headers: {
                         Accept: 'application/json',

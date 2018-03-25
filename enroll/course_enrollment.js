@@ -32,7 +32,7 @@ class CouserEnrollment extends Component {
         
         if(this.validateForm()) {
             
-           fetch('http://localhost:8000/enrollment?user_id=' + localStorage.getItem('user_id'), {
+           fetch('https://reactdjango.herokuapp.com/enrollment?user_id=' + localStorage.getItem('user_id'), {
                     method: 'POST',
                     headers: {
                         Accept: 'application/json',
@@ -84,7 +84,7 @@ class CouserEnrollment extends Component {
     }
     
     componentDidMount(){
-        fetch('http://localhost:8000/course/'+this.props.match.params.id)
+        fetch('https://reactdjango.herokuapp.com/course/'+this.props.match.params.id)
           .then(res => res.json())
           .then(res => {
               console.log(res); 

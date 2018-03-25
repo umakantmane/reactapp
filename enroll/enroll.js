@@ -14,7 +14,7 @@ class Enrolle extends Component {
         };
     }
     componentDidMount(){
-        fetch('http://localhost:8000/course')
+        fetch('https://reactdjango.herokuapp.com/course')
             .then(res => res.json())
             .then(res => {                  
                 this.setState({
