@@ -1,3 +1,4 @@
+var PORT =  process.env.PORT || 8083;
 var config = {
    entry: './main.js',
    output: {
@@ -7,7 +8,7 @@ var config = {
    devServer: {
       inline: true,
       historyApiFallback:true,
-      port: 8083
+      port: PORT
    },
    module: {
       loaders: [
