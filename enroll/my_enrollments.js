@@ -15,7 +15,7 @@ class MyEnrollments extends Component {
     }
     clickFunction(id){
         
-        if(confirm("Are you sure do delete this record!")) {   
+        if(confirm("Are you sure to cancel this course enrollment!")) {   
             fetch('https://reactdjango.herokuapp.com/student_enroll_delete/' + id, {method: "DELETE"})
                     .then(res=>{
                        this.componentDidMount();

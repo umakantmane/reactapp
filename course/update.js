@@ -77,7 +77,7 @@ class UpdateCouser extends Component {
     }
     
     componentDidMount(){
-        fetch('http://localhost:8000/course/'+this.props.match.params.id)
+        fetch('https://reactdjango.herokuapp.com/course/'+this.props.match.params.id)
           .then(res => res.json())
           .then(res => {
               console.log(res); 

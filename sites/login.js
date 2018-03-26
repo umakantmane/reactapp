@@ -65,6 +65,7 @@ class Login extends Component{
                     	localStorage.setItem('access_token', responseJson.access_token);
                     	localStorage.setItem('username', responseJson.username);
                         localStorage.setItem('user_id', responseJson.user_id);
+                        localStorage.setItem('isLogin', 'yes');
                     	this.setState({redirectTo:true});
                         
                     }else{

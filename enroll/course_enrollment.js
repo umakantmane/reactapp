@@ -10,7 +10,7 @@ class CouserEnrollment extends Component {
             getData:{},
             errors:{},
             isChecked:true,
-            redirectToCurd:false
+            redirectoCrud:false
         };
         
         this.setCourseName = this.setCourseName.bind(this);
@@ -28,8 +28,8 @@ class CouserEnrollment extends Component {
     }
 
     handleFormSubmit(e){
-        e.preventDefault();
         
+        e.preventDefault(); 
         if(this.validateForm()) {
             
            fetch('https://reactdjango.herokuapp.com/enrollment?user_id=' + localStorage.getItem('user_id'), {
@@ -46,20 +46,20 @@ class CouserEnrollment extends Component {
                 .then((response) => response.json())
                 .then((responseJson) => {
                     let errors = {};
+
+                    console.log(responseJson);
                     if(responseJson.hasOwnProperty('non_field_errors')){
 
                          errors['course_name'] = responseJson.non_field_errors[0];
                         this.setState({errors:errors})
 
                     } else if(!responseJson.hasOwnProperty('id')){
-                        
                         for(var i in responseJson){
                             errors[i] = responseJson[i][0];
                         }
                         this.setState({errors:errors})
+                        this.setState({redirectoCrud:true}); 
                     }else{
-
-                      
                       this.setState({redirectoCrud:true}); 
                     } 
                     
@@ -67,8 +67,7 @@ class CouserEnrollment extends Component {
                 .catch((error) => {
                     console.error(error);
                 });
-            
-        }else console.log("bad")
+        }
     }
     
     validateForm(){
@@ -87,7 +86,6 @@ class CouserEnrollment extends Component {
         fetch('https://reactdjango.herokuapp.com/course/'+this.props.match.params.id)
           .then(res => res.json())
           .then(res => {
-              console.log(res); 
               this.setState(res);
         });
     }
@@ -98,12 +96,15 @@ class CouserEnrollment extends Component {
     }
     
    render() {
-        
-        if(this.state.redirectToCurd) return <Redirect to='/course_enroll' />
+        var data = '';
+        if(this.state.redirectoCrud) {
+            data =  <div class="alert alert-success">You have enrolled successfully!</div>;
+        }    
         if(!this.state.getData) return <h2>Loading...</h2>
       return (
          <div>
             <form>
+            {data}
                 <div class="form-group">
                     <label for="email">Course Name:</label>
                     <input type="text" class="form-control" id="name"  placeholder="Enter name" name="name" value={this.state.course_name} disabled/>
