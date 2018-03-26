@@ -6,6 +6,12 @@ var config = {
       path:'/',
       filename: 'index.js',
    },
+   devServer: {
+      inline: true,
+      historyApiFallback:true,
+      host:'0.0.0.0',
+      port: PORT
+   },
    module: {
       loaders: [
          {
