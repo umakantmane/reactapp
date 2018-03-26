@@ -9,7 +9,7 @@ var config = {
    devServer: {
       inline: true,
       historyApiFallback:true,
-      host:'https://enrollment-react-app.herokuapp.com',
+      host:'enrollment-react-app.herokuapp.com',
       port: PORT
    },
    module: {
