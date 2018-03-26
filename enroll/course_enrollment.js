@@ -112,7 +112,7 @@ class CouserEnrollment extends Component {
                 </div>
                 <div class="form-group">
                     <label for="email">Course Desc:</label>
-                    <textarea class="form-control" id="name" placeholder="Enter name" name="name" value={this.state.course_name} disabled/>
+                    <textarea class="form-control" id="name" placeholder="Enter name" name="name" value={this.state.course_desc} disabled/>
                 </div>
                 <div class="checkbox">
                     <label><input type="checkbox" checked={this.state.isChecked} onChange={this.setEnrollment.bind(this)} value={this.state.isEnroll}/></label>

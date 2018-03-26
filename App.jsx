@@ -45,7 +45,6 @@ class App extends React.Component {
               <Route exact path='/dashboard' component={DashBoard} />
               <Route exact path='/register' component={Register} />
               <Route exact path='/login' component={Login} />
-              <Route exact path='/course_list' component={Index} />
               <Route exact path='/course_view/:id' component={ViewCourse} />
               <Route exact path='/user_enrollemt' component={MyEnrollments} />
               <Route exact path='/create_course' component={CreateCourse} />
@@ -86,7 +85,9 @@ class Logout extends React.Component {
         e.preventDefault();
         localStorage.removeItem('username');
         localStorage.removeItem('access_token');
+        location.reload();
         this.setState({logOutFlag:true});
+
     }
     render(){
         if(this.state.logOutFlag) return <Redirect to='/login' />
@@ -94,9 +95,9 @@ class Logout extends React.Component {
                 <ul class="nav navbar-nav navbar-right">
                 <li><Link to={'/dashboard'} >Home</Link></li>
                 
-                <li><Link to={'/user_enrollemt'}>My Enrollemt</Link></li>
-                <li><Link to={'/course_enroll'}>Course Enroll</Link></li>
-                <li><Link to={'/course_list'}>Course List</Link></li>
+                <li><Link to={'/user_enrollemt'}>My enrollment</Link></li>
+                <li><Link to={'/course_enroll'}>Courses for enrollment</Link></li>
+                <li><Link to={'/course_list'}>Course Maangement(CRUD)</Link></li>
                 <li><Link to={'/logout'} onClick={this.logOutFunc.bind(this) } ><span class="glyphicon glyphicon-log-in"></span>Logout({this.props.data})</Link></li>
               </ul>
         );
