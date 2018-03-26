@@ -9,6 +9,7 @@ var config = {
    devServer: {
       inline: true,
       historyApiFallback:true,
+      disableHostCheck: true,
       host:'0.0.0.0',
       port: PORT
    },
