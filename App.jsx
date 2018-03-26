@@ -97,7 +97,6 @@ class Logout extends React.Component {
                 
                 <li><Link to={'/user_enrollemt'}>My enrollment</Link></li>
                 <li><Link to={'/course_enroll'}>Courses for enrollment</Link></li>
-                <li><Link to={'/course_list'}>Course Maangement(CRUD)</Link></li>
                 <li><Link to={'/logout'} onClick={this.logOutFunc.bind(this) } ><span class="glyphicon glyphicon-log-in"></span>Logout({this.props.data})</Link></li>
               </ul>
         );
