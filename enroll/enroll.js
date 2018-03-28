@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Switch, Route, Link } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
-
+import params from './../config/config';
 
 class Enrolle extends Component {
     
@@ -14,7 +14,7 @@ class Enrolle extends Component {
         };
     }
     componentDidMount(){
-        fetch('https://reactdjango.herokuapp.com/course')
+        fetch(params.apiUrl + '/course')
             .then(res => res.json())
             .then(res => {                  
                 this.setState({

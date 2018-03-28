@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-
+import params from './../config/config';
 
 class CouserEnrollment extends Component {
     
@@ -32,7 +32,7 @@ class CouserEnrollment extends Component {
         e.preventDefault(); 
         if(this.validateForm()) {
             
-           fetch('https://reactdjango.herokuapp.com/enrollment?user_id=' + localStorage.getItem('user_id'), {
+           fetch(params.apiUrl + '/enrollment?user_id=' + localStorage.getItem('user_id'), {
                     method: 'POST',
                     headers: {
                         Accept: 'application/json',
@@ -83,7 +83,7 @@ class CouserEnrollment extends Component {
     }
     
     componentDidMount(){
-        fetch('https://reactdjango.herokuapp.com/course/'+this.props.match.params.id)
+        fetch(params.apiUrl + '/course/'+this.props.match.params.id)
           .then(res => res.json())
           .then(res => {
               this.setState(res);

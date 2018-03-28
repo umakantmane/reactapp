@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import params from './../config/config';
 
 class Register extends Component{
 
@@ -54,7 +55,7 @@ class Register extends Component{
 		 event.preventDefault();
             if(this.handleFormValidation()){
 
-            	fetch('https://reactdjango.herokuapp.com/signup', {
+            	fetch(params.apiUrl + '/signup', {
                     method: 'POST',
                     headers: {
                         Accept: 'application/json',

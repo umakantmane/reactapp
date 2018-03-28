@@ -16,7 +16,6 @@ class App extends React.Component {
  
  constructor(props){
       super(props);
-     
      this.state = {
      username:localStorage.getItem('username'),
      }
@@ -64,6 +63,7 @@ class RegLogin extends React.Component {
         return(
                 <ul class="nav navbar-nav navbar-right">
                 <li><Link to={'/home'}>Home</Link></li>
+                <li><a href="/login">Login </a></li>
                 <li><Link to={'/register'}><span class="glyphicon glyphicon-log-in"></span>Register</Link></li>
               <li><Link to={'/login'} ><span class="glyphicon glyphicon-log-in"></span>Login</Link></li>
               </ul>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Switch, Route, Link } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
+import params from './../config/config';
 
 
 class MyEnrollments extends Component {
@@ -16,7 +17,7 @@ class MyEnrollments extends Component {
     clickFunction(id){
         
         if(confirm("Are you sure to cancel this course enrollment!")) {   
-            fetch('https://reactdjango.herokuapp.com/student_enroll_delete/' + id, {method: "DELETE"})
+            fetch(params.apiUrl + '/student_enroll_delete/' + id, {method: "DELETE"})
                     .then(res=>{
                        this.componentDidMount();
             })
@@ -26,7 +27,7 @@ class MyEnrollments extends Component {
         }
     };
     componentDidMount(){
-        fetch('https://reactdjango.herokuapp.com/studentenroll/'+localStorage.getItem('user_id'))
+        fetch(params.apiUrl + '/studentenroll/'+localStorage.getItem('user_id'))
             .then(res => res.json())
             .then(res => {
             console.log(res.data);                  
